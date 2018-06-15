@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ pergunta()
+comment0.text=\n\ m\u00E9todo\ para\ realizar\ as\ perguntas\ antes\ de\ iniciar\ as\ janelas\ (em\ outra\ vers\u00E3o\ irei\ colocar\ uma\ janela\ espec\u00EDfica)\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ Classe\ para\ executar\ o\ m\u00E9todo\ de\ perguntas\n
+numComments=2

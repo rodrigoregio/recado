@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CriaRecados()
+comment0.text=\n\ M\u00E9todo\ para\ setar\ as\ configura\u00E7\u00F5es\ de\ tamanho,\ posicionamento,\ texto\ e\ eventos\ dos\ itens\n
+comment1.params=e
+comment1.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment2.params=
+comment2.target=java.lang.String\ pegarDataEHora()
+comment2.text=\n\ Evento\ para\ pegar\ a\ data\ e\ hora\ do\ sistema\n
+comment3.params=evento
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.text=\n\ Evento\ para\ limpar\ os\ campos\n
+comment4.params=
+comment4.target=void\ montaTela()
+comment4.text=\n\ Comando\ para\ adicionar\ os\ itens\ da\ tela\ ao\ getContentPane\ (painel)\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment5.text=\n\ Comando\ para\ iniciar\ a\ janela,\ dar\ o\ tamanho\ e\ ficar\ visivel\n
+numComments=6

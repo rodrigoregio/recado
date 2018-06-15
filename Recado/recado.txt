@@ -1,0 +1,2 @@
+802145|teste|teste|14/06/2018 11:08:35|Não|teste
+711846|teste|teste|14/06/2018 12:26:09|Não|novamente realizando testes

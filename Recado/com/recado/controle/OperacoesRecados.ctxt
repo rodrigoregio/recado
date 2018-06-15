@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=r
+comment0.target=java.util.ArrayList\ lerArquivo(com.recado.beam.Recado)
+comment0.text=\n\ M\u00E9todo\ para\ ler\ o\ arquivo\ e\ armazenar\n
+comment1.params=r
+comment1.target=void\ adicionarNoArquivo(com.recado.beam.Recado)
+comment1.text=\n\ M\u00E9todo\ para\ adicionar\ o\ recado\ no\ arquivo.\n
+numComments=2
