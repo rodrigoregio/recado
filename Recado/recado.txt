@@ -1,2 +1,4 @@
 802145|teste|teste|14/06/2018 11:08:35|Não|teste
 711846|teste|teste|14/06/2018 12:26:09|Não|novamente realizando testes
+
+Este é um arquivo de exemplo de como o recado é salvo na pasta corrente para ver o que representa cada pedaço de texto veja o arquivo com/recado/beam/Recado.java
