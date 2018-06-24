@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Date;
 import com.recado.beam.*;
 import com.recado.controle.*;
+import com.recado.Main;
 /**
  * Classe responsável por criar e exibir a tela de cadastro de Recados.
  * 
@@ -41,13 +42,18 @@ public class CriaRecados extends JFrame implements ActionListener{
         //Quando clicar no botão de fechar no canto superior direito não fazer nada
         this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         //Adicionando um evento para quando o usuário clicar no botão fechar 
-        this.addWindowListener(new WindowAdapter(){
+        this.addWindowListener(new WindowAdapter()
+        {
                 @Override
                 public void windowClosing(WindowEvent e){
                     //Quando clicar no botão fechar do canto superior direito ele desabilita a parte gráfica (fecha a janela) mas continua executando o programa
                     dispose();
-                    //Executar o método estático da classe principal do projeto 
-                    com.recado.Main.pergunta();
+                    //criar outra janela da classe principal do projeto 
+                    Main janela=new Main();
+                    //Ajusta o tamanho da janela
+                    janela.setSize(350,100);
+                    //deixe a janela visivel
+                    janela.setVisible(true);
                 }
             });
         //Setando o posicionamento e tamanho do Label ID
@@ -127,7 +133,7 @@ public class CriaRecados extends JFrame implements ActionListener{
             r.setDe(tde.getText());
             r.setPara(tpara.getText());
             r.setData_hora(tdata_hora.getText());
-            r.setAtivo(true);
+            r.setAtivo(false);
             r.setDescricao(tdescricao.getText());
             String passou;
             /*

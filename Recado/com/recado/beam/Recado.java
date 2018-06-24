@@ -16,7 +16,7 @@ public class Recado{
      *      é inserido no sistema)
      * descrição (é o recado em si
      */
-    private int id;
+    private String id;
     private String de;
     private String para;
     private String data_hora;
@@ -53,14 +53,14 @@ public class Recado{
     /**
      * getter do id do recado
      */
-    public int getID(){
+    public String getID(){
         return id;
     }
 
     /**
      * setter do id do recado
      */
-    public void setID(int ident){
+    public void setID(String ident){
         this.id=ident;
     }
 
