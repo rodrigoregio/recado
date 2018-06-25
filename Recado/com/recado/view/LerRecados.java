@@ -106,24 +106,52 @@ public class LerRecados extends JFrame implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent evento){
-        if(evento.getSource() == ant){
-            
-        }else if(evento.getSource() == prox){
-            
-        }else if(evento.getSource() == loadRecados){
+        try{
             OperacoesRecados op=new OperacoesRecados();
             ArrayList <Recado> recados=op.lerArquivo();
-            JOptionPane.showMessageDialog(null,recados.get(0).toString(),"Testando",JOptionPane.INFORMATION_MESSAGE);
-            JOptionPane.showMessageDialog(null,"Dados carregados com sucesso","Dados carregados",JOptionPane.INFORMATION_MESSAGE);
-            Recado r=recados.get(0);
             
-            /*
-            tid.setText(r.getID()+"");
-            tde.setText(r.getDe());
-            tpara.setText(r.getPara());
-            tdata_hora.setText(r.getData_hora());
-            tdescricao.setText(r.getDescricao());
-            atv.setSelected(true);*/
+            if(evento.getSource() == loadRecados){
+            
+                //JOptionPane.showMessageDialog(null,"Dados carregados com sucesso","Dados carregados",JOptionPane.INFORMATION_MESSAGE);
+                Recado r=recados.get(ind);
+            
+                tid.setText(r.getID()+"");
+                tde.setText(r.getDe());
+                tpara.setText(r.getPara());
+                tdata_hora.setText(r.getData_hora());
+                tdescricao.setText(r.getDescricao());
+                atv.setSelected(true);
+                indice.setText("Indice = "+ind);
+            }
+            if(evento.getSource() == ant){
+                ind=ind - 1;
+                indice.setText("Indice = "+ind);
+                Recado r=recados.get(ind);
+            
+                tid.setText(r.getID()+"");
+                tde.setText(r.getDe());
+                tpara.setText(r.getPara());
+                tdata_hora.setText(r.getData_hora());
+                tdescricao.setText(r.getDescricao());
+                atv.setSelected(true);
+            }
+            if(evento.getSource() == prox){
+                ind=ind+1;
+                indice.setText("Indice = "+ind);
+                Recado r=recados.get(ind);
+            
+                tid.setText(r.getID()+"");
+                tde.setText(r.getDe());
+                tpara.setText(r.getPara());
+                tdata_hora.setText(r.getData_hora());
+                tdescricao.setText(r.getDescricao());
+                atv.setSelected(true);
+                
+            }
+        }catch(java.io.IOException e){
+            e.printStackTrace();
+        }catch(java.lang.IndexOutOfBoundsException e){
+            e.printStackTrace();
         }
     }
     public void montaTela(){

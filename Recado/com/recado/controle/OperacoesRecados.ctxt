@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=
 comment0.target=java.util.ArrayList\ lerArquivo()
-comment0.text=\n\ M\u00E9todo\ para\ ler\ o\ arquivo\ e\ armazenar\n
+comment0.text=\n\ M\u00E9todo\ para\ ler\ o\ arquivo\ e\ armazenar\n\ Estou\ com\ dificuldades\ neste\ m\u00E9todo,ele\ d\u00E1\ v\u00E1rios\ erros\ diferentes\ desde\ Array\ out\ of\ bounds\ a\ Null\ Pointer\ Exception\ (ou\ d\u00E1\ um\ erro\ ou\ da\ outro\n\ e\ n\u00E3o\ sei\ porque\n
 comment1.params=r
 comment1.target=void\ adicionarNoArquivo(com.recado.beam.Recado)
 comment1.text=\n\ M\u00E9todo\ para\ adicionar\ o\ recado\ no\ arquivo.\n

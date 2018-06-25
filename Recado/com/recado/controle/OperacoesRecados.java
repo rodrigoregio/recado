@@ -16,47 +16,43 @@ public class OperacoesRecados{
      * e não sei porque
      */
     public ArrayList<Recado> lerArquivo() throws java.io.IOException{
-        try{
-            ArrayList <Recado> recados=new ArrayList<Recado>();
-            String linha ="a#b#c#d#e#f";
-            String caminhoArq=System.getProperty("user.dir");
-            FileReader arq= new FileReader(caminhoArq+"//recado.txt");
-            BufferedReader lerArq=new BufferedReader(arq);
-            int ind=0;
-            do{
-                try{
-                    /**
-                     * O erro geralmente dá neste pedaco de codigo
-                     */
-                    Recado rec=new Recado();
-                    String [] atributos=linha.split("#");
-                    rec.setID(atributos[0]);
-                    rec.setDe(atributos[1]);
-                    rec.setPara(atributos[2]);
-                    rec.setData_hora(atributos[3]);
-                    if(atributos[4].equalsIgnoreCase("false")){
-                        rec.setAtivo(true);
-                    }else{
-                        rec.setAtivo(false);
+        String linha = new String();
+        String nomeArquivo=System.getProperty("user.dir");
+        nomeArquivo=nomeArquivo+"//recado.txt";
+        
+        File arq=new File(nomeArquivo);
+        ArrayList <Recado> recados=new ArrayList<Recado>();
+        if(arq.exists()){
+            try{
+                FileReader leitor = new FileReader(nomeArquivo);
+                BufferedReader bufferDeArquivo = new BufferedReader(leitor);
+                
+                while(true){
+                    linha=bufferDeArquivo.readLine();
+                    if(linha == null){
+                        break;
                     }
-                    rec.setDescricao(atributos[5]);
-                    recados.add(rec);
-                    ind++;
-                    linha=lerArq.readLine();
-                }catch(IOException e){
-                    e.printStackTrace();
+                    String [] atributos=linha.split("#");
+                    Recado r=new Recado();
+                    r.setID(atributos[0]);
+                    r.setDe(atributos[1]);
+                    r.setPara(atributos[2]);
+                    r.setData_hora(atributos[3]);
+                    r.setDescricao(atributos[5]);
+                    if(atributos[4].equals("true")){
+                        r.setAtivo(true);
+                    } else {
+                        r.setAtivo(false);
+                    }
+                    recados.add(r);
                 }
-            }while(linha != null);
-            /**
-             * fim do pedaço de codigo que tenho problema
-             */
-            lerArq.close();
-            arq.close();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
             return recados;
-        }catch(FileNotFoundException e){
-            JOptionPane.showMessageDialog(null,"Arquivo não encontrado", "File Not Found Exception"
-            , JOptionPane.ERROR_MESSAGE);
-            return null;
+        }else{
+            JOptionPane.showMessageDialog(null,"O arquivo não existe");
+            return recados;
         }
     }
 
@@ -73,11 +69,11 @@ public class OperacoesRecados{
         //String para verificar o status do recado
 
         //Aqui pega o recado e o torna em String
-        String texto=r.getID()+"|"+
-            r.getDe()+"|"+
-            r.getPara()+"|"+
-            r.getData_hora()+"|"+
-            r.getAtivo()+"|"+
+        String texto=r.getID()+"#"+
+            r.getDe()+"#"+
+            r.getPara()+"#"+
+            r.getData_hora()+"#"+
+            r.getAtivo()+"#"+
             r.getDescricao();
         //Aqui grava o texto no arquivo
         gravandoArquivo.write(texto);

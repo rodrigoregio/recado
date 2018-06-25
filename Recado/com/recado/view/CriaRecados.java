@@ -129,7 +129,7 @@ public class CriaRecados extends JFrame implements ActionListener{
         }else if(evento.getSource() == enviar){
             //Armazena os dados do recado digitado na variavel r
             Recado r=new Recado();
-            r.setID(Integer.parseInt(tid.getText()));
+            r.setID(tid.getText());
             r.setDe(tde.getText());
             r.setPara(tpara.getText());
             r.setData_hora(tdata_hora.getText());
