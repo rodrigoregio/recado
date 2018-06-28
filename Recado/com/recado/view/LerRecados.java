@@ -52,7 +52,7 @@ public class LerRecados extends JFrame implements ActionListener{
                 //criar outra janela da classe principal do projeto 
                 Main janela=new Main();
                 //Ajusta o tamanho da janela
-                janela.setSize(350,100);
+                janela.setSize(400,800);
                 //deixe a janela visivel
                 janela.setVisible(true);
             }
@@ -109,7 +109,6 @@ public class LerRecados extends JFrame implements ActionListener{
         try{
             OperacoesRecados op=new OperacoesRecados();
             ArrayList <Recado> recados=op.lerArquivo();
-            
             if(evento.getSource() == loadRecados){
             
                 //JOptionPane.showMessageDialog(null,"Dados carregados com sucesso","Dados carregados",JOptionPane.INFORMATION_MESSAGE);
@@ -125,28 +124,35 @@ public class LerRecados extends JFrame implements ActionListener{
             }
             if(evento.getSource() == ant){
                 ind=ind - 1;
-                indice.setText("Indice = "+ind);
-                Recado r=recados.get(ind);
+                if(ind <0){
+                    ind=ind+1;
+                }else{
+                    indice.setText("Indice = "+ind);
+                    Recado r=recados.get(ind);
             
-                tid.setText(r.getID()+"");
-                tde.setText(r.getDe());
-                tpara.setText(r.getPara());
-                tdata_hora.setText(r.getData_hora());
-                tdescricao.setText(r.getDescricao());
-                atv.setSelected(true);
+                    tid.setText(r.getID()+"");
+                    tde.setText(r.getDe());
+                    tpara.setText(r.getPara());
+                    tdata_hora.setText(r.getData_hora());
+                    tdescricao.setText(r.getDescricao());
+                    atv.setSelected(true);
+                }
             }
             if(evento.getSource() == prox){
                 ind=ind+1;
-                indice.setText("Indice = "+ind);
-                Recado r=recados.get(ind);
+                if(ind>=recados.size()){
+                    ind=ind-1;
+                }else{
+                    indice.setText("Indice = "+ind);
+                    Recado r=recados.get(ind);
             
-                tid.setText(r.getID()+"");
-                tde.setText(r.getDe());
-                tpara.setText(r.getPara());
-                tdata_hora.setText(r.getData_hora());
-                tdescricao.setText(r.getDescricao());
-                atv.setSelected(true);
-                
+                    tid.setText(r.getID()+"");
+                    tde.setText(r.getDe());
+                    tpara.setText(r.getPara());
+                    tdata_hora.setText(r.getData_hora());
+                    tdescricao.setText(r.getDescricao());
+                    atv.setSelected(true);
+                }
             }
         }catch(java.io.IOException e){
             e.printStackTrace();

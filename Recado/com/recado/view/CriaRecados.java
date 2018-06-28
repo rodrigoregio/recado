@@ -51,7 +51,7 @@ public class CriaRecados extends JFrame implements ActionListener{
                     //criar outra janela da classe principal do projeto 
                     Main janela=new Main();
                     //Ajusta o tamanho da janela
-                    janela.setSize(350,100);
+                    janela.setSize(400,800);
                     //deixe a janela visivel
                     janela.setVisible(true);
                 }

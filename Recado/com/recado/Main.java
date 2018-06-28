@@ -47,7 +47,7 @@ public class Main extends JFrame implements ActionListener{
             //Cria-se a janela de criação de recados
             CriaRecados cr=new CriaRecados();
             //Ajusta-se o tamanho da janela
-            cr.setSize(400,600);
+            cr.setSize(400,800);
             //coloca-se a tela para ser exibida
             cr.setVisible(true);
             //some a tela
@@ -55,11 +55,8 @@ public class Main extends JFrame implements ActionListener{
         }else
         //senão se a fonte do evento for do botão l
         if(e.getSource() == l){
-            //mostra-se a informação que ainda não foi implementada a opção de leitura de recados
-            JOptionPane.showMessageDialog(null,"Opção ainda não implementada.\nAguarde o desenvolvimento completo"
-                ,"Ainda em desenvolvimento",JOptionPane.INFORMATION_MESSAGE);
             LerRecados ler=new LerRecados();
-            ler.setSize(800,800);
+            ler.setSize(400,800);
             ler.setVisible(true);
             this.dispose();
         }
@@ -80,7 +77,7 @@ public class Main extends JFrame implements ActionListener{
         //Cria-se a janela
         Main janela=new Main();
         //Ajusta-se o tamanho da janela
-        janela.setSize(350,100);
+        janela.setSize(400,800);
         //Exibe a janela
         janela.setVisible(true);
     }
